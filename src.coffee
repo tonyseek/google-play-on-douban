@@ -6,7 +6,7 @@ extract_play_url = (callback) =>
   $.get edit_url, source: "userscript", (response) =>
     parent = $("<html>").html(response) # fake element
     play_url = parent.find(".desc-item-app_url .value").text().trim()
-    callback?(play_url)
+    if play_url.indexOf("play.google.com") >= 0 then callback?(play_url)
 
 $ =>
   extract_play_url (play_url) =>
