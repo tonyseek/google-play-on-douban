@@ -6,6 +6,6 @@ $(DST): $(SRC) description.js
 	coffee -p -c $(SRC) >> $(DST)
 
 clean:
-	rm -f ./*.user.coffee
+	rm -f ./*.user.js
 
 .PHONY: clean
